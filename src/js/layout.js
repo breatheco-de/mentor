@@ -22,6 +22,9 @@ const Layout = ({ store }) => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Switch>
+						<PrivateRoute exact path="/">
+							<ChooseAcademies />
+						</PrivateRoute>
 						<PrivateRoute exact path="/academies">
 							<ChooseAcademies />
 						</PrivateRoute>

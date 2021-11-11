@@ -13,6 +13,7 @@ export const ChooseAcademies = () => {
 			{store.me.roles.map(({ academy }) => (
 				<li key={academy.id}>
 					<Card
+						image={academy.logo_url}
 						heading={academy.name}
 						onClick={() => {
 							console.log(`Set academy ${academy.slug}`);
