@@ -31,6 +31,8 @@ const injectContext = PassedComponent => {
 			 * state.actions.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
+			window.store = state.store;
+			if (state.store.token) state.actions.getMe(state.store.token);
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,
@@ -38,7 +40,7 @@ const injectContext = PassedComponent => {
 		// on the state of this component
 		return (
 			<Context.Provider value={state}>
-				<PassedComponent {...props} />
+				<PassedComponent {...props} store={state.store} />
 			</Context.Provider>
 		);
 	};

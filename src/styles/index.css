@@ -1,0 +1,37 @@
+/* 
+    General Styles
+*/
+.pointer{
+    cursor: pointer;
+}
+.avatar-card{
+    flex-direction: inherit;
+    display: flex;
+    padding: 10px;
+}
+.avatar-card:hover{
+    background: #e2e2e2;
+}
+.avatar-card img{ 
+    max-width: 60px; 
+    max-height: 60px; 
+    border-radius: 50%;
+    border: 1px solid #a0a0a0;
+}
+.avatar-card .card-title{ 
+    margin-bottom: 0;
+}
+.avatar-card .card-text{ 
+    font-size: 12px;
+}
+.loading{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: white;
+    text-align: center;
+    padding-top: 100px;
+}
+.loading img{ max-width: 200px; }
