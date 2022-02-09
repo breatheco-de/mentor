@@ -1,12 +1,17 @@
 import React from "react";
-import LoadingImage from "../../img/spinner.gif";
 import PropTypes from "prop-types";
+import "../../styles/loader.css";
 
 export const Loading = ({ msg }) => {
 	return (
 		<div className="loading">
 			{msg && <p>{msg}</p>}
-			<img src={LoadingImage} />
+			<div className="lds-ellipsis">
+				<div />
+				<div />
+				<div />
+				<div />
+			</div>
 		</div>
 	);
 };
