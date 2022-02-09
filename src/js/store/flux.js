@@ -38,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log("set service", service);
 				if (!service) return false;
 
-				const resp = await bc.fetch(`/v1/mentorship/academy/mentor?service=${service.slug}`);
+				const resp = await bc.fetch(`/v1/mentorship/academy/mentor?service=${service.slug}&status=ACTIVE`);
 				const mentors = await resp.json();
 				setStore({ mentors, service });
 			},

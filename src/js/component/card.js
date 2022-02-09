@@ -6,7 +6,7 @@ export const Card = ({ image, heading, description, subheading, onClick }) => {
 		<div className={`card avatar-card ${onClick ? "pointer" : ""}`} onClick={() => (onClick ? onClick() : null)}>
 			{image && <img className="card-img-top" src={image} alt="Card image cap" />}
 			<div className={`card-body ${description || subheading ? "pt-1" : ""}`}>
-				<h5 className="card-title">{heading}</h5>
+				<h5 className="card-title text-capitalize">{heading.toLowerCase()}</h5>
 				{description && <p className="card-text">{description}</p>}
 				{subheading && (
 					<p className="card-text">
