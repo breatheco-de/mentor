@@ -23,8 +23,7 @@ export const ChooseService = () => {
 	if (store.services.length == 0)
 		return (
 			<div className="alert alert-secondary text-center">
-				There are no services for {store.academy.name},{" "}
-				<Link to={`/academies?${store.token}`}>back to academies</Link>.
+				There are no services for {store.academy.name}.
 			</div>
 		);
 
