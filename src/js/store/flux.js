@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: qs.parse(window.location.search).token || null,
+			syllabus: qs.parse(window.location.search).syllabus || null,
 			academy: null,
 			me: null,
 			service: null,
@@ -37,8 +38,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setService: async service => {
 				console.log("set service", service);
 				if (!service) return false;
+				let store = getStore();
 
-				const resp = await bc.fetch(`/v1/mentorship/academy/mentor?service=${service.slug}&status=ACTIVE`);
+				const resp = await bc.fetch(
+					`/v1/mentorship/academy/mentor?service=${service.slug}&syllabus=${store.syllabus}&status=ACTIVE`
+				);
 				const mentors = await resp.json();
 				setStore({ mentors, service });
 			},
